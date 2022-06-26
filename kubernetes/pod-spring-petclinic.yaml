@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pet-clinic
+  labels:
+    name: pet-clinic
+spec:
+  containers:
+  - name: pet-clinic
+    image: myenvpractise.jfrog.io/eks-docker-local/spring-petclinic:initial-commit
+    resources:
+      limits:
+        memory: "256Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8080
+  imagePullSecrets:
+    - name: artcloud1cred
+
+
