@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deploymentName}}-deployment
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: {{ .Values.deploymentName}}
+  template:
+    metadata:
+      labels:
+        name: {{ .Values.deploymentName}}
+    spec:
+      containers:
+      - name: {{ .Values.deploymentName}}-pod
+        image: {{ .Values.image.repository }}
+        resources:
+          limits:
+            memory: {{ .Values.resources.limits.memory}}
+            cpu: {{ .Values.resources.limits.cpu}}
+        ports:
+        - containerPort: {{ .Values.image.containerPort}}
+      imagePullSecrets:
+        - name: {{ .Values.imagePullSecrets}}
