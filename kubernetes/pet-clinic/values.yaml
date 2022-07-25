@@ -39,7 +39,7 @@ imagePullSecrets: artcloud1cred
 #   # runAsUser: 1000
 
 Service:
-  type: NodePort
+  type: LoadBalancer
   port: 8080
   NodePort : 32500
 
