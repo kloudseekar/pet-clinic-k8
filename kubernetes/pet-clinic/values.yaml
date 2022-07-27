@@ -6,7 +6,7 @@ replicaCount: 1
 deploymentName: pet-clinic
 
 image:
-  repository: myenvpractise.jfrog.io/eks-docker-local/spring-petclinic:initial-commit
+  repository: myenvpractise.jfrog.io/default-docker-virtual/pet-clinic-k8:jfrog
   pullPolicy: IfNotPresent
   containerPort : 8080
   # Overrides the image tag whose default is the chart appVersion.
