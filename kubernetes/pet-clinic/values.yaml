@@ -7,7 +7,7 @@ deploymentName: pet-clinic
 
 image:
   repository: myenvpractise.jfrog.io/default-docker-virtual/pet-clinic-k8:jfrog
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   containerPort : 8080
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -39,7 +39,7 @@ imagePullSecrets: artcloud1cred
 #   # runAsUser: 1000
 
 Service:
-  type: LoadBalancer
+  type: NodePort
   port: 8080
   NodePort : 32500
 
